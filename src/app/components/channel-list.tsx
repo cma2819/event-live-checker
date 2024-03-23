@@ -58,7 +58,7 @@ export const ChannelList = ({ teams, channels, lives }: Props) => {
                 }}>
                     <Stack spacing={2}>
                         <FormGroup row>
-                            <FormControlLabel control={<Checkbox defaultChecked value={onlyLive} onChange={(e) => { setOnlyLive(e.target.checked) }} />} label="Live channel" />
+                            <FormControlLabel control={<Checkbox defaultChecked value={onlyLive} onChange={(e) => { setOnlyLive(e.target.checked) }} />} label="Live channel only" />
                         </FormGroup>
                         <FormGroup row>
                             <FormControlLabel control={<Checkbox defaultChecked value={showTwitch} onChange={(e) => { setShowTwitch(e.target.checked) }} />} label="Twitch" />
