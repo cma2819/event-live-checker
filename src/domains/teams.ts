@@ -14,11 +14,11 @@ export type Teams = {
 export const Twitch = (name: string, username: string): Player => ({
     platform: 'twitch',
     name,
-    username: username.toLocaleLowerCase(),
+    username: username.toLowerCase(),
 });
 
 export const Youtube = (name: string, username: string): Player => ({
     platform: 'youtube',
     name,
-    username,
+    username: username.toLowerCase(),
 });
