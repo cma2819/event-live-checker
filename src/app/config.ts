@@ -21,7 +21,7 @@ const config: AppConfig = {
                 Twitch('あまペン　ぺむ', 'pemupenguin'),
                 Twitch('れもん', 'lemons_picrun'),
                 Twitch('とまとまと', 'tomatomato_777'),
-                Twitch('TEL', 'telpikmin'),
+                Twitch('shiro', 'shirokirby'),
                 Twitch('ふじくら', 'fujikura123')
             ],
         },
@@ -66,7 +66,7 @@ const config: AppConfig = {
         {
             name: 'Western A',
             players: [
-                Twitch('DarkRiolu', 'Darkriolu27'),
+                Twitch('Rioyner', 'RioynerR'),
                 Twitch('Nippo', 'nippo4512'),
                 Twitch('Geo', 'probablygeo'),
                 Twitch('Sawney', 'sawneyrath11'),
@@ -78,7 +78,7 @@ const config: AppConfig = {
                 Twitch('Klaire', 'klaire_fluffle'),
                 Twitch('Noops', 'AQ_Noops'),
                 Twitch('Kaug', 'kaugdx'),
-                Twitch('Bees', 'supportgaybees'),
+                Twitch('DarkRiolu', 'Darkriolu27'),
                 Twitch('Curtissimo', 'curtissimo41'),
             ]
         },
@@ -97,7 +97,7 @@ const config: AppConfig = {
                 Twitch('Sol', 'beamqueensol'),
                 Twitch('Hybrid', 'pro_hybrid'),
                 Twitch('Bombhappy', 'bombhappy'),
-                Twitch('drcKAR', 'drckargaming'),
+                Twitch('Bees', 'supportgaybees'),
                 Twitch('Grample', 'graample'),
             ]
         }
