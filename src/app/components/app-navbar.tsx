@@ -6,13 +6,13 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { usePathname } from 'next/navigation';
 import events from '../events/_config';
 
-export const AppNavbar = async () => {
+export const AppNavbar = () => {
     const pathname = usePathname();
   
     let eventName;
     if (pathname.startsWith('/events')) {
         const [_, __, slug] = pathname.split('/');
-        eventName = slug in events ? (await events[slug]).default.event.name : '';
+        eventName = slug in events ? events[slug].event.name : '';
     }
 
     return (

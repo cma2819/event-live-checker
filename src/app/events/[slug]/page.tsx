@@ -14,7 +14,7 @@ export default async function Page({ params }: { params: { slug: string }}) {
         return redirect('/');
     }
 
-    const config = (await events[slug]).default;
+    const config = events[slug];
     const teams = config.teams;
     const channels = await fetchChannels(teams);
     const lives = await featLives(channels.flatMap(channel => channel.players.map(player => ({
