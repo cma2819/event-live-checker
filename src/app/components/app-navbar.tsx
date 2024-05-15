@@ -21,7 +21,7 @@ export const AppNavbar = async () => {
                 <Typography variant='h6' component='div' sx={{
                     textAlign: 'center',
                     flexGrow: 1,
-                }}>Event Live Checker{ eventName ?? ` - ${eventName}`}</Typography>
+                }}>Event Live Checker{ eventName ? ` - ${eventName}` : ''}</Typography>
                 <IconButton aria-label='github' href='https://github.com/cma2819/event-live-checker'>
                     <FontAwesomeIcon icon={faGithub} />
                 </IconButton>
