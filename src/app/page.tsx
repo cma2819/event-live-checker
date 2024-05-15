@@ -1,25 +1,18 @@
 import { Container } from '@mui/material';
-import { fetchChannels } from './_usecases';
-import config from './config';
-import { featLives } from './_usecases/featLives';
-import { ChannelList } from './components/channel-list';
-import { MessageBox } from './components/message-box';
-
-export const revalidate = 300;
+import events from './events/_config';
+import Link from 'next/link';
 
 export default async function Home() {
-  const teams = config.teams;
-  const channels = await fetchChannels();
-  const lives = await featLives(channels.flatMap(channel => channel.players.map(player => ({
-      channelId: player.id,
-      platform: player.platform,
-  }))));
+  const eventProfiles = (await Promise.all(Object.values(events))).map(config => config.default.event);
 
   return (
     <main>
       <Container>
-        <MessageBox />
-        <ChannelList teams={teams} channels={channels} lives={lives} />
+        <ul>
+          { eventProfiles.map(p => (
+            <Link key={p.slug} href={`/events/${p.slug}`}>{ p.name }</Link>
+          ))}
+        </ul>
       </Container>
     </main>
   );
