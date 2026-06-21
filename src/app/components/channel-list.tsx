@@ -5,7 +5,7 @@ import { ChannelCard } from './channel-card';
 import { red, green, blue, purple, yellow } from '@mui/material/colors';
 import { useState } from 'react';
 import { Player, Teams } from '@/domains/teams';
-import { Channel, Stream } from '@/domains/streams';
+import { Channel, Platform, Stream } from '@/domains/streams';
 import { FetchChannelsResult } from '../_usecases';
 import { FeatLivesResult } from '../_usecases/featLives';
 
@@ -13,9 +13,10 @@ type Props = {
     teams: Teams;
     channels: FetchChannelsResult;
     lives: FeatLivesResult;
+    filterEnables?: Platform[];
 }
 
-export const ChannelList = ({ teams, channels, lives }: Props) => {
+export const ChannelList = ({ teams, channels, lives, filterEnables }: Props) => {
     
     const teamColors = [
         red[200],
@@ -61,8 +62,16 @@ export const ChannelList = ({ teams, channels, lives }: Props) => {
                             <FormControlLabel control={<Checkbox defaultChecked value={onlyLive} onChange={(e) => { setOnlyLive(e.target.checked) }} />} label="Live channel only" />
                         </FormGroup>
                         <FormGroup row>
-                            <FormControlLabel control={<Checkbox defaultChecked value={showTwitch} onChange={(e) => { setShowTwitch(e.target.checked) }} />} label="Twitch" />
-                            <FormControlLabel control={<Checkbox defaultChecked value={showYoutube} onChange={(e) => { setShowYoutube(e.target.checked) }} />} label="Youtube" />
+                            {
+                                (!filterEnables || filterEnables?.includes('twitch')) && (
+                                    <FormControlLabel control={<Checkbox defaultChecked value={showTwitch} onChange={(e) => { setShowTwitch(e.target.checked) }} />} label="Twitch" />
+                                )
+                            }
+                            {
+                                (!filterEnables || filterEnables?.includes('youtube')) && (
+                                    <FormControlLabel control={<Checkbox defaultChecked value={showYoutube} onChange={(e) => { setShowYoutube(e.target.checked) }} />} label="Youtube" />
+                                )
+                            }
                         </FormGroup>
                     </Stack>
                 </Paper>

@@ -22,6 +22,5 @@ export type Stream = {
 
 export type StreamPlatformClient = {
     platform: Platform;
-    listChannels: (usernames: Channel['username'][]) => Promise<Channel[]>;
     listLiveStream: (ids: Channel['id'][]) => Promise<Stream[]>;
 }

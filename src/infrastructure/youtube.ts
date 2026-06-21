@@ -1,4 +1,4 @@
-import { Channel, Stream, StreamPlatformClient } from '@/domains/streams';
+import { Stream, StreamPlatformClient } from '@/domains/streams';
 import { google } from 'googleapis'
 import Parser from 'rss-parser';
 
@@ -26,31 +26,6 @@ export const YoutubeClient = ({ apiKey }: YoutubeCredentials): StreamPlatformCli
 
     return {
         platform: 'youtube',
-        listChannels: async (usernames) => {
-            try {
-                const results = await Promise.all(usernames.map(username => youtube.channels.list({
-                    forHandle: username,
-                    part: [
-                        'id', 'snippet'
-                    ]
-                })));
-    
-                return results.map((result): Channel | undefined => {
-                    const [channel] = result.data.items ?? [ undefined ];
-                    return channel ? {
-                        platform: 'youtube',
-                        id: channel.id!,
-                        displayName: channel.snippet?.title!,
-                        username: channel.snippet?.customUrl!,
-                        url: `https://www.youtube.com/${channel.snippet?.customUrl}`,
-                    } : undefined;
-                }).filter((channel): channel is Channel => {
-                    return Boolean(channel);
-                });
-            } catch(e) {
-                return [];
-            }
-        },
         listLiveStream: async (ids) => {
             try {
                 const videoIds = (await Promise.all(ids.map(channelId => getVideoIdsFromFeed(channelId)))).flat();

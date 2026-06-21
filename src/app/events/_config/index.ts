@@ -1,8 +1,8 @@
 import { EventConfig } from './types';
-import katfl from './katfl-true-ed-2024';
+import crash2 from './crash2-2026';
 
 const events: Record<string, EventConfig> = {
-    'katfl-true-ed-2024': katfl
-} as const; 
+    'crash2-2026': crash2,
+} as const;
 
 export default events;
