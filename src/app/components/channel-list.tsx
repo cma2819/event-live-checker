@@ -50,7 +50,7 @@ export const ChannelList = ({ teams, channels, lives, filterEnables }: Props) =>
     }
 
     return (
-        <Grid container columns={15} spacing={2} sx={{
+        <Grid container columns={15} spacing={2} justifyContent="center" sx={{
             marginTop: 0,
         }}>
             <Grid item xs={15}>
