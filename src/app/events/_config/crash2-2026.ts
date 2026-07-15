@@ -11,7 +11,7 @@ const config: EventConfig = {
             name: 'Aチーム',
             players: [
                 Twitch('かなな',            'kananann333',   '1372965335'),
-                Youtube('ハイシャン',       '@Yang_Haixian', 'UCbryBKo3jzYXLFteXg5QzOQ'),
+                Twitch('ころも',            '5koromo6',      '466425954'),
                 Youtube('しずく',           '@aqua_shizuku616', 'UCHBbEkYWSjsnIQ04o2PWffg'),
                 Twitch('セレナーデ☆ゆうき', 'serenade_yuuki', '141192479'),
                 Twitch('鴉ミドリ',          'karasmidori',   '426713806'),
